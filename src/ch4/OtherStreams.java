@@ -1,6 +1,8 @@
 package ch4;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -9,6 +11,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import helper.SNP;
@@ -16,14 +20,44 @@ import helper.SNP;
 public class OtherStreams {
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws URISyntaxException {
 	//	testFileStream();
-		testArrayStream();
+	//	testArrayStream();
 	//	testMapStream();
 	//	testMapStream2();
+	//	sumint();
+		reduceS();
+		reduceS2();
+	
 		
 	}
 	
+	
+
+	private static void reduceS2() {
+		List<Integer> intList = Arrays.asList( 1,2,3,4,5);
+		int oi = 	intList.stream().reduce(1, (h,c) -> h+c);
+			System.out.println(oi);
+		
+	}
+
+
+
+	private static void reduceS() {
+		List<Integer> intList = Arrays.asList( 1,2,3,4,5);
+	Optional<Integer> oi = 	intList.stream().reduce((h,c) -> h+c);
+		System.out.println(oi);
+	}
+
+
+
+	private static void sumint() {
+		List<Integer> intList = Arrays.asList( 1,2,3,4,5);
+		int i = intList.stream().collect(Collectors.summingInt(x -> x.intValue()));
+		System.out.println("here"+i);
+		
+	}
+
 
 
 	private static void testMapStream() {
@@ -47,7 +81,6 @@ public class OtherStreams {
 		map.put("du", Arrays.asList(7,9,0,1));
 		map.put("nuss", Arrays.asList(5,1,2,8));
 		map.put("tschüss", Arrays.asList(1,2,3,4));
-		
 		map.entrySet().stream()
 		.forEach(e -> System.out.println(e.getKey() + e.getValue()));
 		
@@ -65,11 +98,12 @@ public class OtherStreams {
 		System.out.println("count: "+count);
 	}
 
-	static void testFileStream() {
+	static void testFileStream() throws URISyntaxException {
 		List<SNP> listOfGenomeData = new ArrayList<>();
 		
 		Path genes = Paths.get("E:\\gdocks", "Downloads","ManuSporny-genome.txt");
-		System.out.println(Files.exists(genes));
+	
+	
 		
 		try(Stream<String> stream = Files.lines(genes)){
 			stream
@@ -79,13 +113,15 @@ public class OtherStreams {
 					String[] arr = line.split("\t");
 					SNP snp = new SNP(arr[0], arr[1], Long.parseLong(arr[2]), arr[3]);
 					listOfGenomeData.add(snp);
-					System.out.println(listOfGenomeData);
+					
 			});
 			
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+
 		}
+		System.out.println(listOfGenomeData.size());
 	}
 }

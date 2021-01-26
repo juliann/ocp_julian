@@ -36,8 +36,9 @@ public class OtherStreams {
 
 	private static void reduceS2() {
 		List<Integer> intList = Arrays.asList( 1,2,3,4,5);
-		int oi = 	intList.stream().reduce(1, (h,c) -> h+c);
-			System.out.println(oi);
+		throw new Error();
+//		int oi = 	intList.stream().reduce(1, (h,c) -> h+c);
+//			System.out.println(oi);
 		
 	}
 

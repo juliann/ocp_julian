@@ -21,13 +21,13 @@ public class OtherStreams {
 	
 	
 	public static void main(String[] args) throws URISyntaxException {
-	//	testFileStream();
+		testFileStream();
 	//	testArrayStream();
 	//	testMapStream();
 	//	testMapStream2();
 	//	sumint();
-		reduceS();
-		reduceS2();
+//		reduceS();
+//		reduceS2();
 	
 		
 	}

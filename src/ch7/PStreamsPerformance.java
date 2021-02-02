@@ -2,6 +2,9 @@ package ch7;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class PStreamsPerformance {
 	
@@ -25,6 +28,11 @@ public class PStreamsPerformance {
 	
 	public static void main(String[] args) {
 		PStreamsPerformance pd = new PStreamsPerformance();
+		
+		String[] arr = {"a", "b", "aa", "bb"};
+		
+		Map<Integer, String> collect = Stream.of(arr).parallel().collect(Collectors.toMap(d->d.length(), e->e, (a,b) -> a));
+		System.out.println(collect);
 		//System.out.println(Runtime.getRuntime().availableProcessors());
 		
 		List<Integer> data = new ArrayList<>();

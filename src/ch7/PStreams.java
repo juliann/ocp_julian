@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -22,6 +23,14 @@ public class PStreams {
 		asList.stream().parallel().forEach(System.out::print);
 		System.out.println("\n---");
 	
+		Stream.of("1", "bb").parallel().collect(Collectors.groupingBy(a -> a.length()));
+		Stream.of("1", "bb").parallel().collect(Collectors.groupingBy((String a) -> a.length()
+				,TreeMap::new,
+				Collectors.counting()));
+		
+//		Stream.of("1", "bb").parallel().collect(Collectors.groupingBy((String a) -> a.length()
+//				,TreeMap::new,
+//				Collectors.reducing(0,(b,c) -> b.length())));
 		
 		Arrays.asList(1,2,3,4,5,6).stream().parallel().forEachOrdered(System.out::print);
 		List<Character> c = Arrays.asList('a');

@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.Reader;
 
 public class IOStream {
 
@@ -24,6 +25,7 @@ public class IOStream {
 		if(!newF.exists()) {
 			try {
 				newF.createNewFile();
+				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -58,6 +60,8 @@ public class IOStream {
 		
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(f));
+			
+		
 			while (br.read()!=-1) {
 			System.out.println(br.readLine());
 			}

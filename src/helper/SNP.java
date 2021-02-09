@@ -3,10 +3,11 @@ package helper;
 
 
 public class SNP {
-	final String rsid;
-	final String chromosome;
-	final long position;
-	final String genotype;
+	 private String rsid;
+	 private String chromosome;
+	 private long position;
+	 private String genotype;
+	
 	public SNP(String rsid, String chromosome, long position, String genotype) {
 		super();
 		this.rsid = rsid;
@@ -15,32 +16,40 @@ public class SNP {
 		this.genotype = genotype;
 	}
 	
-	/**
-	 * @return the rsid
-	 */
-	String getRsid() {
+	public SNP() {
+		super();
+	}
+
+	public String getRsid() {
 		return rsid;
 	}
 
-	/**
-	 * @return the chromosome
-	 */
-	String getChromosome() {
+	public void setRsid(String rsid) {
+		this.rsid = rsid;
+	}
+
+	public String getChromosome() {
 		return chromosome;
 	}
 
-	/**
-	 * @return the position
-	 */
-	long getPosition() {
+	public void setChromosome(String chromosome) {
+		this.chromosome = chromosome;
+	}
+
+	public long getPosition() {
 		return position;
 	}
 
-	/**
-	 * @return the genotype
-	 */
-	String getGenotype() {
+	public void setPosition(long position) {
+		this.position = position;
+	}
+
+	public String getGenotype() {
 		return genotype;
+	}
+
+	public void setGenotype(String genotype) {
+		this.genotype = genotype;
 	}
 
 	@Override

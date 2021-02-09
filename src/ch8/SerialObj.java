@@ -25,6 +25,7 @@ public class SerialObj {
 		readXml();
 		writeJson();
 	}
+	@SuppressWarnings("unchecked")
 	private static void readXml() {
 		List<SNP> listOfGenomeDataFromXml = new ArrayList<>();
 		
@@ -33,6 +34,7 @@ public class SerialObj {
 			
 			listOfGenomeDataFromXml = (List<SNP>)decoder.readObject();
 			System.out.println(listOfGenomeDataFromXml.get(2));
+			System.out.println("hi");
 			
 			
 		} catch (FileNotFoundException e) {

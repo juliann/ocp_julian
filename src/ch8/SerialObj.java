@@ -39,10 +39,10 @@ public class SerialObj {
 	static List<SNP> listOfGenomeData = new ArrayList<>();
 
 	public static void main(String[] args) {
-//		read();
-//		write();
-//		read2();
-		write2();
+		read();
+		write();
+		read2();
+//		write2();
 //		System.out.println(listOfGenomeData.size());
 	//	writeXml();
 		//readXml();
@@ -68,10 +68,12 @@ public class SerialObj {
 
 	private static void read2() {
 		try(ObjectInputStream ojs = new ObjectInputStream(new BufferedInputStream(new FileInputStream("test.txt")))){
-			
+			System.out.println("hi");
 			Object obj = ojs.readObject();
 			if (obj instanceof List) {
-				System.out.println(obj);
+			List<SNP> listOfGenomeData2 = (List<SNP>) obj;
+			
+			System.out.println(listOfGenomeData2.get(1));
 				System.out.println(listOfGenomeData.get(1));
 			}
 		} catch (FileNotFoundException e) {

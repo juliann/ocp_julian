@@ -1,8 +1,8 @@
 package helper;
 
+import java.io.Serializable;
 
-
-public class SNP {
+public class SNP implements Serializable {
 	 private String rsid;
 	 private String chromosome;
 	 private long position;

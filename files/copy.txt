@@ -1,0 +1,6 @@
+Sitemap: https://www.website.com/sitemap.xml
+
+User-Agent: *
+Disallow: /_api/*
+Disallow: /_api/
+Disallow: /verify-email/

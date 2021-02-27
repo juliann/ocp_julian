@@ -17,14 +17,16 @@ public class ViewAndAttributes {
 	public static void main(String[] args) {
 //		dosFile();
 		dosView();
+	
 	}
 
 	private static void dosView() {
 		Path p = Paths.get("E:","gdocks","79413655.pdf");
 //		Path pO = Paths.get("E:","test1");
 //		Path p1 = Paths.get("E:","test1","info.txt");
-		Files.wal
+		
 		try {
+			
 //			Files.deleteIfExists(p);
 //			Files.createDirectory(p);
 			BasicFileAttributeView dFA= Files.getFileAttributeView(p, BasicFileAttributeView.class);
@@ -48,7 +50,7 @@ public class ViewAndAttributes {
 			DosFileAttributes dFA= Files.readAttributes(p, DosFileAttributes.class);
 			System.out.println(dFA.isSystem());
 			Instant i = Instant.now(null);
-			Files.wa
+		
 			System.out.println(dFA.isDirectory());
 			
 			

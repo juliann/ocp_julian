@@ -8,13 +8,18 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.nio.file.DirectoryStream;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
+import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.nio.file.attribute.PosixFileAttributeView;
+import java.nio.file.attribute.PosixFileAttributes;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.SortedMap;
@@ -30,54 +35,101 @@ public class PathStuff {
 //		test();
 	//	produceNestedPaths(Paths.get("testerino"),3);
 //		BasicFileAttributes
-		
-		
-		try {
-			URL website = new URL("https://webgalleries.reipka.de/UKKV/source/rpkdeu5_032_066.htm");
-			
-			Path p=	Paths.get(website.toURI());
-			Files.lines(p).forEach(System.out::println);;
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		Path p1 = Paths.get("E:","gdocks","Downloads","Git-2.30.1-64-bit.exe");
-		Path p2 = Paths.get("apfel");
-		
-		System.out.println("execute?:"+Files.isExecutable(p1));
-		System.out.println(p1.toString());
-		System.out.println(p1.getName(1));
-		System.out.println(p1.getName(1).toString());
-		System.out.println(p2.toString());
-		System.out.println(p1.getRoot());
-//		SortedMap<String, Charset> availableCharsets = Charset.availableCharsets();
-//		
-//		for(Entry<String, Charset> e:availableCharsets.entrySet()) {
-//			System.out.println(e.getKey() + " " + e.getValue());
-//		}
-//		Path p = Paths.get("E:","gdocks","Downloads","Märchencollection 98 20201221.txt");
+//		directoryStreamTest();
+		fileVisitorTest();
+//		moreURL();
+	}
+
+	private static void moreURL() {
 //		try {
-//			InputStream is = new FileInputStream(p.toString());
-//			byte[]a = new byte[1024];int i;
+//		URL website = new URL("https://webgalleries.reipka.de/UKKV/source/rpkdeu5_032_066.htm");
 //		
-//			while ((i = is.read(a))!=-1) {
-//				System.out.println(i);
-//			}
+//		Path p=	Paths.get(website.toURI());
+//		Files.lines(p).forEach(System.out::println);;
+//		} catch (URISyntaxException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
 //		} catch (IOException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
+//		}
+//	Path p1 = Paths.get("E:","gdocks","Downloads","Git-2.30.1-64-bit.exe");
+//	Path p2 = Paths.get("apfel");
+//	
+//	System.out.println("execute?:"+Files.isExecutable(p1));
+//	System.out.println(p1.toString());
+//	System.out.println(p1.getName(1));
+//	System.out.println(p1.getName(1).toString());
+//	System.out.println(p2.toString());
+//	System.out.println(p1.getRoot());
+//	SortedMap<String, Charset> availableCharsets = Charset.availableCharsets();
+//	
+//	for(Entry<String, Charset> e:availableCharsets.entrySet()) {
+//		System.out.println(e.getKey() + " " + e.getValue());
+//	}
+//	Path p = Paths.get("E:","gdocks","Downloads","Märchencollection 98 20201221.txt");
+//	try {
+//		InputStream is = new FileInputStream(p.toString());
+//		byte[]a = new byte[1024];int i;
+//	
+//		while ((i = is.read(a))!=-1) {
+//			System.out.println(i);
+//		}
+//	} catch (IOException e) {
+//		// TODO Auto-generated catch block
+//		e.printStackTrace();
 //}
+		
+	}
+
+	private static void fileVisitorTest() {
+		Path p1 = Paths.get("E:","gdocks","Downloads");
+		PathStuff.Apfel a = new PathStuff.Apfel();
+		try {
+			Files.walkFileTree(p1, a);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+	}
+	static class Apfel extends SimpleFileVisitor<Path>{
+		@Override
+		public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+		System.out.println(file.getFileName());
+		
+			return FileVisitResult.CONTINUE;
+		}
+		
+		
+		
+	}
+	private static void directoryStreamTest() {
+		Path p1 = Paths.get("E:","gdocks","Downloads");
+		try (DirectoryStream<Path> ds = Files.newDirectoryStream(p1,(p)->p.toString().contains("Z") );){
+			
+			for (Path p : ds) {
+				System.out.println(p);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 	private static void test() {
 		Path p = Paths.get("hi");
 		Path pc = Paths.get(p.toString()+"\\neu");
-	
+	PosixFileAttributeView po;
+	//Files.newd
+
 		try {
 			System.out.println(Files.createDirectories(pc));
+			System.out.println("file hidden: " + Files.getAttribute(pc, "dos:hidden"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

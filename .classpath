@@ -9,5 +9,8 @@
 	<classpathentry kind="lib" path="E:/gdocks/Downloads/jackson-annotations-2.12.1.jar"/>
 	<classpathentry kind="lib" path="E:/gdocks/Downloads/jackson-databind-2.12.1.jar"/>
 	<classpathentry kind="lib" path="E:/gdocks/Downloads/jackson-core-2.12.1.jar"/>
+	<classpathentry kind="lib" path="E:/gdocks/Downloads/derby-10.14.2.0.jar"/>
+	<classpathentry kind="lib" path="E:/gdocks/Downloads/h2-1.4.200.jar"/>
+	<classpathentry kind="lib" path="E:/gdocks/Downloads/mysql-connector-java-8.0.23.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

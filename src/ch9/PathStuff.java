@@ -36,9 +36,27 @@ public class PathStuff {
 	//	produceNestedPaths(Paths.get("testerino"),3);
 //		BasicFileAttributes
 //		directoryStreamTest();
-		fileVisitorTest();
+//		fileVisitorTest();
 //		moreURL();
-	}
+		
+
+		Path p1 = Paths.get( "E:","gdocks","Downloads");
+		DirectoryStream<Path> dirStream=null;
+		try {
+			dirStream = Files.newDirectoryStream(p1 );
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		
+		for( Path p : dirStream ) {
+			System.out.println( p );
+		}
+		
+	}	
+	
+	
 
 	private static void moreURL() {
 //		try {

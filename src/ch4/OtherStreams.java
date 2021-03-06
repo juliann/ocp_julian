@@ -6,14 +6,23 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Deque;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
 
 import helper.SNP;
 
@@ -21,13 +30,42 @@ public class OtherStreams {
 	
 	
 	public static void main(String[] args) throws URISyntaxException {
-		testFileStream();
+//		testFileStream();
 	//	testArrayStream();
 	//	testMapStream();
 	//	testMapStream2();
 	//	sumint();
 //		reduceS();
 //		reduceS2();
+		Optional<String> o = Optional.of("123");
+		
+		Map<String, String> sm = new HashMap<>();
+//		sm.st
+//		Stream aus Java 1.9
+//		o.stream().forEach(System.out::println);
+//		Optional<Integer> map = Optional.of(null);
+//		System.out.println(map.isPresent());
+		
+//		Optional<Integer> map = o.map(y -> y.length());
+//		map.stream()
+		Stream<Boolean> bools = Stream.iterate(true,  x -> !x);
+		List<Boolean> map = bools.limit(1)
+		    .collect(Collectors.toList());
+//		System.out.println(map);
+//		System.out.println(map);
+		Map<String,String> m = new HashMap<>();
+		m.put("1", "a");
+		m.put("1", "b");
+		System.out.println(m);
+		Set<String> set = new HashSet<>();
+		set.add("tire-");
+		List<String> list = new LinkedList<>();
+		Deque<String> queue = new ArrayDeque<>();
+		queue.push("wheel-");
+		Stream.of(set, list, queue)
+		   .flatMap(x -> x.stream())
+		   .forEach(System.out::print);
+		Comparator c;
 	
 		
 	}
@@ -36,9 +74,21 @@ public class OtherStreams {
 
 	private static void reduceS2() {
 		List<Integer> intList = Arrays.asList( 1,2,3,4,5);
-		throw new Error();
+		Character c;
+		Stream s; 
+		intList.stream().collect(Collectors.toMap(x->x, y->y+1));
+		long l = 1;
+//		int i = l;
+//		s.collect()
+//		Stream.of(intList).collect(Collectors.tol)
+	
+		
+//		intList.stream().map
+//		Function<T, R>
+//		throw new Error();
 //		int oi = 	intList.stream().reduce(1, (h,c) -> h+c);
 //			System.out.println(oi);
+	
 		
 	}
 

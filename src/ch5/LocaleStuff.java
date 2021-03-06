@@ -43,7 +43,7 @@ public class LocaleStuff {
 	private static void updateAndReadPropFile() {
 		Properties p2 = new Properties();
 		FileInputStream fis;
-		
+		Double db;
 		try {
 	
 			fis = new FileInputStream("myProps1.props");
@@ -52,6 +52,7 @@ public class LocaleStuff {
 			p2.list(System.out);
 			p2.setProperty("k3", "v3");
 			p2.list(System.out);
+			
 			FileOutputStream fos = new FileOutputStream("myProps2.props");
 			p2.store(fos, "new fileprop2");
 			fos.close();

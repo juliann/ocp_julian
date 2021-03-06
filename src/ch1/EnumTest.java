@@ -17,7 +17,7 @@ public class EnumTest {
 				System.out.println("hi");
 			}
 		};
-		t.s
+		
 		List ix= new List() {
 			int x= 10;
 			
@@ -161,7 +161,7 @@ public class EnumTest {
 			}
 			
 		};
-		ix.x;
+	
 		for(Season s:Season.values()) {
 			System.out.println(s.name() + " " + s.ordinal() );
 			s.printV();

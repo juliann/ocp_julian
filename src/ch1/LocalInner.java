@@ -19,17 +19,17 @@ public  class LocalInner  {
 
 	int length = 5;
 	 
-	Collection 
+	 
 	void calc() {
 		Stream<String> a = Stream.of("1");
 		a.forEach(System.out::println);
 		TreeMap<String, Integer> m = new TreeMap<>();
 		List<String> l = new ArrayList<>();
 		TreeSet<String> ss=new TreeSet<>();
-		 q = new ArrayDeque();
+		Queue q = new ArrayDeque();
 		List<Integer> ll = new LinkedList<>();
 		Map map = new TreeMap<>(m);
-		List llll= map.values();
+		List llll= (List) map.values();
 		
 		
 

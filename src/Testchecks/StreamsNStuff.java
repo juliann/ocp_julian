@@ -23,23 +23,23 @@ public class StreamsNStuff {
 //		Stream<String> stream = Stream.iterate("", (s) -> s + "1");
 //		System.out.println(stream.limit(2).map(x -> x + "2"));
 		LongStream ls = LongStream.of(1,2);
-		DoubleSummaryStatistics
+		ls.summaryStatistics();
 		Predicate<? super String> predicate = s -> s.startsWith("g");
 		Stream<String> stream1 = Stream.generate(() -> "growl! ");
 		Stream<String> stream2 = Stream.generate(() -> "growl! ");
-		stream2.to
+	
 //		boolean b1 = stream1.anyMatch(predicate);
 //		boolean b2 = stream2.allMatch(predicate);
 //		System.out.println(b1 + " " );
-		Object o = null;
+		
 //		Optional opt = Optional.of(o);
-		Optional opt1 = Optional.ofNullable(o);
+//		Optional opt1 = Optional.ofNullable(o);
 //		opt1.
-		OptionalDouble d = OptionalDouble.of(5.0);
-		d.
+//		OptionalDouble d = OptionalDouble.of(5.0);
+		
 		
 //		System.out.println(opt.get());
-		System.out.println(opt1);
+//		System.out.println(opt1);
 		
 		
 		Arrays.asList();
@@ -51,63 +51,7 @@ public class StreamsNStuff {
 		long l = 1;
 		double db = l;
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			
 		
 	}
 }

@@ -1,8 +1,13 @@
 package ch1;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import ch1.A.AAAAA.AAAA;
 
@@ -55,6 +60,9 @@ private class z{
 	
 		public class C {
 			
+			class D{
+				
+			}
 			private int x=30;
 			
 			public void allTheX() {
@@ -69,14 +77,18 @@ private class z{
 	 }
 	 
 		public static void main(String[] args) {
-		
+			String x = List.of("1", "2").stream().parallel().reduce("", String::concat);   
+//			ArrayList<Object> collect = List.of("1", "2").stream().collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
 			A a = new A();
 			A.B b1 = new A().new B();
 			System.out.println(b1.x);
+//			IntStream.of(1,2,3,4).collect(null, null, null)
+			List.of("1", "2").stream().collect(Collectors.summarizingInt( zz ->zz.length()));
+			Map<Boolean, List<String>> collect = List.of("1", "2").stream().collect(Collectors.partitioningBy(zzz -> zzz.equals("1")));
 			
-			
-			A.B b= a.new B();
-			A.B.C c= b.new C();
+			B b= a.new B();
+			B.C c= b.new C();
+			B.C.D d = c.new D();
 			c.allTheX();
 			System.out.println(null instanceof A);
 //			System.out.println(b instanceof ArrayList<E>);
@@ -87,5 +99,15 @@ private class z{
 interface aaa{
 	
 }
-
+class GTEst<T>{
+	Object[] ta = new Object[10];
+	T[] t = (T[]) new Object[10];
+	String[] sa = new String[10];
+	
+	
+	void addSound(List<? extends String> list) {
+//		list.add("gu");
+//		((Integer)list.get(0)).doubleValue();	
+	}
+}
 

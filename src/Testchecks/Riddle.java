@@ -21,7 +21,7 @@ public class Riddle {
 	      sleep();
 	      if(r != null) r.getAnswer(null);
 	      return "None, that's a hardware problem";
-	      Collections.sy
+
 	   }
 	 
 	   public static void main(String... ununused) {

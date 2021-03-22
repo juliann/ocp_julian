@@ -33,11 +33,14 @@ public class IOStream {
 		}
 		try(InputStream is = new FileInputStream(oldF);
 			OutputStream os = new FileOutputStream(newF);){
-			
+			FileInputStream fis;
+			FileReader fr;
+			fr.re
+			is.sk
 			int b;
 			while((b=is.read())!=1) {
 				os.write(b);
-				
+				FileNotFoundException
 			}
 			
 			

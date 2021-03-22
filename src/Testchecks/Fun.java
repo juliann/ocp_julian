@@ -54,7 +54,7 @@ li.add("2");
 li.add("3");
 CyclicBarrier cb;
 RecursiveTask<String> r;
-r.inv
+
 li.stream()
 .parallel()
 .peek((i)-> 

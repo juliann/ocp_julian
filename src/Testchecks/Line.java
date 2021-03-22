@@ -10,7 +10,7 @@ public class Line {
 	static BlockingDeque<Integer> queue = new LinkedBlockingDeque<>();
 	   public static void main(String[] participants) throws Exception {
 		   
-		   System.out.println(Collectors.
+		   
 		   
 	      IntStream.iterate(1, i -> i+1).limit(5)
 	         .parallel()
@@ -23,7 +23,8 @@ public class Line {
 					e.printStackTrace();
 				}
 			});
-	      IntStream.iterate(1, i -> 5).limit(10)
+		   
+		   IntStream.iterate(1, i -> 5).limit(10)
 	         .parallel()
 	         .forEach(s -> {
 				try {

@@ -10,10 +10,12 @@ import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -23,6 +25,12 @@ public class LocaleStuff {
 	
 
 	public static void main(String[] args) {
+		
+		Period p=Period.ofDays(1);
+		Period plusMonths = p.plusMonths(2).minusDays(1).plusDays(4).plusYears(2);
+		System.out.println(plusMonths);
+		
+		
 //		test1();
 //		resourceFile();
 //		resourceSet();
@@ -44,6 +52,7 @@ public class LocaleStuff {
 		Properties p2 = new Properties();
 		FileInputStream fis;
 		Double db;
+//		p2.get
 		try {
 	
 			fis = new FileInputStream("myProps1.props");
@@ -85,6 +94,7 @@ public class LocaleStuff {
 	private static void sysProp() {
 		Properties p = System.getProperties();
 		p.setProperty("hi", "Hullo?");
+//		p.get
 		System.out.println(p.getProperty("hi", "WHAAAAAT?"));
 		System.out.println(p.getProperty("hi1", "WHAAAAAT?"));
 		
@@ -97,6 +107,8 @@ public class LocaleStuff {
 		LocalTime lt = LocalTime.now(ZoneId.ofOffset("GMT", ZoneOffset.ofHours(1)));
 		LocalDateTime ldt = LocalDateTime.of(ld, lt);
 		//Jan 12, 2021
+		
+//		ChronoUnit.MINUTES.bet
 		System.out.println(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).format(ld));
 		//11:30:59 AM
 		System.out.println(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM).format(lt));
@@ -171,6 +183,7 @@ public class LocaleStuff {
 		Locale de = new Locale("de", "DE");
 		ResourceBundle rb = ResourceBundle.getBundle("resources.Tax", de);
 		System.out.println(rb.getString("open"));
+	
 		
 		
 	}

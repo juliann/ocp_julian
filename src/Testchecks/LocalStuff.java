@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.text.NumberFormat;
+import java.time.Month;
 import java.time.format.DateTimeParseException;
 import java.util.Locale;
 import java.util.MissingResourceException;
@@ -40,7 +41,7 @@ public static void main(String[] args) throws MalformedURLException {
 //	lf.x.doSth();
 //	lf.y.test();
 	
-
+System.out.println("märz:"+Month.MARCH.ordinal());
 	
 	System.out.println(Locale.getDefault());
 	
@@ -50,12 +51,12 @@ public static void main(String[] args) throws MalformedURLException {
 //	Locale.setDefault(new Locale("en", "US"));
 //	Locale newLocale= new Locale("de", "DE");
 	Locale.setDefault(new Locale("de", "DE"));
-	ResourceBundle rb = ResourceBundle.getBundle("l18n.l18n", new Locale("fr"));
+	ResourceBundle rb = ResourceBundle.getBundle("l18n.l18n", new Locale("fr","FR"));
 	
 
 //	/ResourceBundle rb = ResourceBundle.getBundle("C:\\Users\\julian\\git\\ocp_julian\\l18n\\l18n");
-	System.out.println(rb.getString("hello"));
-	System.out.println(rb.getString("horst"));
+	//System.out.println(rb.getString("hello"));
+//	System.out.println(rb.getString("horst"));
 	System.out.println(rb.getString("de"));
 	System.out.println(Locale.getDefault());
 	

@@ -15,6 +15,22 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
 import java.io.Writer;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
+import java.util.List;
+import java.util.OptionalDouble;
+import java.util.Set;
+import java.util.function.BiFunction;
+import java.util.function.Function;
+import java.util.function.IntToDoubleFunction;
+import java.util.function.Predicate;
+import java.util.stream.Collector;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+import ch4.Ding;
 
 public class Zebra implements Serializable {
 	   private static final long serialUID = 1L;
@@ -36,12 +52,18 @@ public class Zebra implements Serializable {
 
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
-		   File f = new File ("c://test2/file.txt");
+		System.out.println(Instant.now().truncatedTo(ChronoUnit.MONTHS));
+		LocalDateTime ld;
+		Predicate c; 
+		File f = new File ("c://test2/file.txt");
 		//   f.createNewFile();
-		 
-		   Console c = System.console();
-		   c.read
-//		  boolean b =  c.reader().read() != 'x';
+		 try {
+			Ding makeDing = Ding.makeDing();
+//			List.of(makeDing).stream().flatMap(x -> x.getDates().stream()).
+		 }catch(Exception e) {}
+//		   Console c = System.console();
+		
+		//		  boolean b =  c.reader().read() != 'x';
 //		   OutputStream oss;
 //		   InputStream iss;
 //		   Writer w;

@@ -36,7 +36,7 @@ public class LocaleStuff {
 //		resourceSet();
 //		propFile();
 //		sysProp();
-//		resBundle();
+		resBundle();
 //		format();
 //		formatNumbers();
 //		formatDates();
@@ -180,7 +180,7 @@ public class LocaleStuff {
 	}
 
 	private static void resBundle() {
-		Locale de = new Locale("de", "DE");
+		Locale de = new Locale("de", "APFELBAUM");
 		ResourceBundle rb = ResourceBundle.getBundle("resources.Tax", de);
 		System.out.println(rb.getString("open"));
 	

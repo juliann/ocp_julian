@@ -9,7 +9,7 @@ public class DBTesting{
 //		test();
 //		h2();
 //		mysql();
-		Class c;
+		 
 		try {
 			c = Class.forName("java.lang.String");
 			System.out.println(c);
@@ -38,8 +38,10 @@ public class DBTesting{
 //					stmt.executeUpdate("insert into testerino values(2,'hallo')");
 //					stmt.executeQuery("select * from testerino");
 					ResultSet rs = stmt.executeQuery("select * from testerino");
+					Class<?> forName = Class.forName("");
 					ResultSetMetaData rsmd= rs.getMetaData();
 					int count = rsmd.getColumnCount();
+					stmt.
 					System.out.println(count);
 					for (int i=1;i<=count;i++) {
 						System.out.println("hi");
@@ -72,7 +74,7 @@ public class DBTesting{
 //			stmt.executeQuery("select * from testerino");
 			ResultSet rs = stmt.executeQuery("select * from testerino");
 			while (rs.next()) {
-				
+				rs.abs
 				System.out.println(rs.getInt(1));
 				
 			}
@@ -90,7 +92,7 @@ public class DBTesting{
 		String url = "jdbc:derby:zoo";
 		
 		try(Connection conn = DriverManager.getConnection(url);
-	//		Statement stmt = conn.createStatement()
+			Statement stmt = conn.createStatement()
 				)
 				{
 			//stmt.executeUpdate("create table shit(id integer primary key, name varchar(255))");

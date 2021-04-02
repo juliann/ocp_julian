@@ -2,6 +2,8 @@ package ch4;
 
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Ding implements Comparable <Ding>{
 	static int counter;
@@ -12,15 +14,34 @@ public class Ding implements Comparable <Ding>{
 	double temperature;
 	LocalDate birthdate;
 	KindDing kiddi;
+	private List<LocalDate> dates;
 	
 	public static Ding makeDing() {
-		return new Ding( ++counter,  42l, ("DingNr: " + counter), "green", 36.7, LocalDate.of(2000, 11, 12) );
+		List<LocalDate> l = new ArrayList<>();
+		l.add(LocalDate.now());
+		l.add(LocalDate.of(1999, 1, 1));
+		return new Ding( ++counter,  42l, ("DingNr: " + counter), "green", 36.7, LocalDate.of(2000, 11, 12),l );
 	}
 
 	
 	
 	
-	public Ding(int id, long meter, String name, String color, double temperature, LocalDate birthdate) {
+	public List<LocalDate> getDates() {
+		return dates;
+	}
+
+
+
+
+	public void setDates(List<LocalDate> dates) {
+		this.dates = dates;
+	}
+
+
+
+
+	public Ding(int id, long meter, String name, String color, double temperature, 
+			LocalDate birthdate,List<LocalDate> list) {
 		super();
 		this.id = id;
 		this.meter = meter;
@@ -28,6 +49,7 @@ public class Ding implements Comparable <Ding>{
 		this.color = color;
 		this.temperature = temperature;
 		this.birthdate = birthdate;
+		this.dates = list;
 	}
 
 
@@ -47,39 +69,103 @@ public class Ding implements Comparable <Ding>{
 	
 	
 
-	int getId() {
+
+	public int getId() {
 		return id;
 	}
 
 
-	long getMeter() {
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+
+	public long getMeter() {
 		return meter;
 	}
 
 
-	String getName() {
+
+
+	public void setMeter(long meter) {
+		this.meter = meter;
+	}
+
+
+
+
+	public String getName() {
 		return name;
 	}
 
 
-	String getColor() {
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+
+	public String getColor() {
 		return color;
 	}
 
 
-	double getTemperature() {
+
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+
+
+
+	public double getTemperature() {
 		return temperature;
 	}
 
 
-	LocalDate getBirthdate() {
+
+
+	public void setTemperature(double temperature) {
+		this.temperature = temperature;
+	}
+
+
+
+
+	public LocalDate getBirthdate() {
 		return birthdate;
 	}
 
 
-	KindDing getKiddi() {
+
+
+	public void setBirthdate(LocalDate birthdate) {
+		this.birthdate = birthdate;
+	}
+
+
+
+
+	public KindDing getKiddi() {
 		return kiddi;
 	}
+
+
+
+
+	public void setKiddi(KindDing kiddi) {
+		this.kiddi = kiddi;
+	}
+
+
 
 
 	@Override
@@ -165,19 +251,6 @@ class KindDing{
 		this.name = name;
 	}
 	
-	
-	int getId() {
-		return id;
-	}
-	void setId(int id) {
-		this.id = id;
-	}
-	String getName() {
-		return name;
-	}
-	void setName(String name) {
-		this.name = name;
-	}
 
 
 	@Override

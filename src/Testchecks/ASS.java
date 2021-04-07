@@ -75,4 +75,8 @@ class c implements b{
 	
 	b i = new c();
 	Runnable r1 = () -> Stream.of(1,2,3).parallel();
+	public int gib() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

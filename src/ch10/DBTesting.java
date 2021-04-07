@@ -9,14 +9,9 @@ public class DBTesting{
 //		test();
 //		h2();
 //		mysql();
+		mysql2();
 		 
-		try {
-			c = Class.forName("java.lang.String");
-			System.out.println(c);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 	
 //		try {
 //			Class c = Class.forName("com.mysql.jdbc.Driver");
@@ -38,10 +33,10 @@ public class DBTesting{
 //					stmt.executeUpdate("insert into testerino values(2,'hallo')");
 //					stmt.executeQuery("select * from testerino");
 					ResultSet rs = stmt.executeQuery("select * from testerino");
-					Class<?> forName = Class.forName("");
+				
 					ResultSetMetaData rsmd= rs.getMetaData();
 					int count = rsmd.getColumnCount();
-					stmt.
+					
 					System.out.println(count);
 					for (int i=1;i<=count;i++) {
 						System.out.println("hi");
@@ -74,7 +69,7 @@ public class DBTesting{
 //			stmt.executeQuery("select * from testerino");
 			ResultSet rs = stmt.executeQuery("select * from testerino");
 			while (rs.next()) {
-				rs.abs
+			
 				System.out.println(rs.getInt(1));
 				
 			}
@@ -129,5 +124,22 @@ public class DBTesting{
 			e.printStackTrace();
 		}
 		
+	}
+	static void mysql2() {
+		String url = "jdbc:mysql://localhost/Test";
+		
+		try(Connection conn = DriverManager.getConnection
+				(url, "immodb", "Pa$$w0rd");
+				 Statement stmt = conn.createStatement();){
+//			stmt.execute("create table testerino (id int primary key, name varchar(255))");
+	//		stmt.executeUpdate("insert into testerino(id) values(1)");
+//			stmt.executeUpdate("insert into testerino values(2,'hallo')");
+//			stmt.executeQuery("select * from testerino");
+		System.out.println(conn);
+
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	}
 }

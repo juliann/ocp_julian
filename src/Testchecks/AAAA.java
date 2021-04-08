@@ -7,17 +7,27 @@ import java.util.function.IntBinaryOperator;
 import java.util.function.IntFunction;
 import java.util.function.ToIntFunction;
 
+interface i1{
+	static void p() {}
+}
+interface i2 extends i1{
+	static void p() {}
+}
+
 public class AAAA {
-class B1{
+static class B1{
 	 class Z{
-		IntFunction<R>
+		
 	}
 }
-static class CCCCCA{
-	static {}
+ class CCCCCA{
+	
 	public  int gib() {
-		 
+		  class ccc{}
 		return 5;
+	}
+	void bb() {
+		B1 b1 = new B1();
 	}
 }
 }
@@ -36,7 +46,6 @@ final  class Bottle {
   final public static void main(String[] feed) {
      System.out.print(new Bottle().insert.getSize());
      
-     AAAA.CCCCCA c = new AAAA.CCCCCA();
-     int i = c.gib();
+
   }
 }

@@ -43,7 +43,7 @@ final public static void main(String[] args) throws ParseException {
      } else {
          new File("").mkdir();
      }
-	Files.wa
+
 	 LocalDate ld = LocalDate.now();
 	 System.out.println(ld.plusDays(1).plusMonths(1).plusMonths(1).plusDays(1));
 	 File f = new File("E:\\gdocks\\OCP");
@@ -51,16 +51,16 @@ final public static void main(String[] args) throws ParseException {
 	 Instant i = Instant.now();
 	 Stream<Integer> is;
 		final int iaa= 1;
-		 List list = Arrays.
+		 
 	 IntSupplier a;
-	 Files.readAttributes(f.toPath(), BasicFileAttributes.class).se
+
 //	 System.out.println(i.plus(1, ChronoUnit.HOURS));
 //	 NumberFormat currFormatDE = NumberFormat.getCurrencyInstance ();
 //	 System.out.println(currFormatDE.parse("$45"));
 	ZonedDateTime td = ZonedDateTime.of(LocalDateTime.now(),ZoneId.of("GMT+1"));
 	System.out.println(td);
 	Reader r;
-	InputStream is;
+	InputStream isss;
 	IntStream t;
 	ArrayDeque<String> ad;
 	Properties p;

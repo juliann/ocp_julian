@@ -22,6 +22,8 @@ import java.nio.file.attribute.PosixFileAttributeView;
 import java.nio.file.attribute.PosixFileAttributes;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 import java.util.SortedMap;
 
 import com.sun.jndi.toolkit.url.Uri;
@@ -39,20 +41,28 @@ public class PathStuff {
 //		fileVisitorTest();
 //		moreURL();
 		
+		InputStream in = System.in;
+		
 
 		Path p1 = Paths.get( "E:","gdocks","Downloads");
-		DirectoryStream<Path> dirStream=null;
 		try {
-			dirStream = Files.newDirectoryStream(p1 );
+		System.out.println(Files.walk(p1, 0).count());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
-		
-		for( Path p : dirStream ) {
-			System.out.println( p );
-		}
+//		DirectoryStream<Path> dirStream=null;
+//		try {
+//			dirStream = Files.newDirectoryStream(p1 );
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	
+//		
+//		for( Path p : dirStream ) {
+//			System.out.println( p );
+//		}
 		
 	}	
 	

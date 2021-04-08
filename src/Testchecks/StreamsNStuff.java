@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.io.PrintWriter;
+import java.io.Reader;
 import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
@@ -51,12 +52,12 @@ public class StreamsNStuff {
 		BufferedReader r;
 		Reader red;
 		PrintWriter pw;
-		CharSequence a
-		f = new File("c:\\test2");
+	
+		File f = new File("c:\\test2");
 		f.mkdir();
 		BufferedReader b = null;
 		List lo = new ArrayList<>();
-		Object o;
+		Object aao;
 		
 		LocalDate date1 = LocalDate.of(2017, Month.MARCH, 3);
 		LocalDate date2 = date1.plusDays(2).minusDays(1);

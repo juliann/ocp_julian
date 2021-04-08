@@ -59,15 +59,16 @@ public class inner implements Callable<String>{
 	@Override
 	public String call() throws Exception {
 		// TODO Auto-generated method stub	
+		Integer c;
 		return null;
-		Integer c
+	
 	}
 	
 }
 	public static void main(String[] args) {
 		Consumer<Integer> cons = System.out::println;
 		Predicate<Integer> pred = yyyy -> yyyy>4;
-		Files.set
+	
 		Period.ofWeeks(1);
 
 		Locale loc;
@@ -91,8 +92,8 @@ public class inner implements Callable<String>{
 //		l.stream().finda
 	Double collect = l.stream().collect(Collectors.averagingInt(a ->a.length()));
 		char[] cc = new char[] {1,2};
-		Double d =12.9;
-		int ijk = d.intValue();
+		Double aad =12.9;
+		int ijk = aad.intValue();
 		System.out.println(ijk);
 		for (int ccc:cc) {}
 		DoubleStream aaaa = DoubleStream.of(1);
@@ -116,7 +117,7 @@ public class inner implements Callable<String>{
 //		Integer i;
 		
 		OptionalInt oisInt = OptionalInt.of(1);
-		Callable c;
+		Callable ccc;
 		Math.random();
 		Function f;
 //		Consumer cc;

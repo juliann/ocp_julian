@@ -20,14 +20,14 @@ public class Inh {
 		T t = new T();
 		t.doS();
 		T.sst();
-		ConcurrentHashMap hm = new 
+	
 		}
 	static void stest() {
 		
 	}
 	static void sst() {
 		System.out.println(j);
-		Files.newb
+		
 	}
 	protected void sup() {}
 }
@@ -36,7 +36,7 @@ class T extends Inh{
 	
 	static int j = 10;
 	private void test() {
-		Files.l
+		
 		System.out.println("T test");
 	}
 	public void doS(){

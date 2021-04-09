@@ -79,7 +79,7 @@ Map map = new ConcurrentHashMap<>();
 		Period pt;
 //		OptionalInt.of(1).or
 		IntStream.of(1).min();
-	
+	Basecoll
 		Optional o = Optional.empty();
 		
 //				Stream of = Stream.of(1.1,2.2);

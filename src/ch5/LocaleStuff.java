@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.text.MessageFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -20,6 +21,7 @@ import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.Set;
+import java.util.function.IntFunction;
 
 public class LocaleStuff {
 	
@@ -217,11 +219,11 @@ public class LocaleStuff {
 		Locale en = new Locale("en", "US");
 		Locale fr = new Locale("fr", "FR");
 		Locale de = new Locale("de", "DE");
-	
+
 		ResourceBundle rb = ResourceBundle.getBundle("resources/Zoo", fr);
 		System.out.println(rb.getString("hello"));
 		System.out.println(rb.getString("open"));
-		
+	
 		ResourceBundle rb1 = ResourceBundle.getBundle("resources/Zoo", en);
 		System.out.println(rb1.getString("hello"));
 		System.out.println(rb1.getString("open"));
@@ -236,6 +238,7 @@ public class LocaleStuff {
 
 		ResourceBundle rb4 = ResourceBundle.getBundle("resources.Zoo", de);
 		System.out.println(rb4.getString("open3"));
+		Instant i;
 		
 		//java.util.MissingResourceException: Can't find bundle for base name myProps1, locale en_US
 //		ResourceBundle rb5 = ResourceBundle.getBundle("myProps1");

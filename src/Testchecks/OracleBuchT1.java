@@ -44,8 +44,9 @@ public static void main(String[] args) {
 	System.out.println(ab[0]);
 	OracleBuchT1.A a = new OracleBuchT1.A("hi") {};
 		TreeMap tm = new TreeMap<>();
-	
+	System.out.println(List.of(1,2,3));
 	PriorityQueue<String> pq = new PriorityQueue<>();
+
 	pq.add("a");
 	pq.add("b");
 	pq.add("c");

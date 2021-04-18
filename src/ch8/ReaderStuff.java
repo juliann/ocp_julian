@@ -2,6 +2,7 @@ package ch8;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -32,8 +33,10 @@ public static void main(String[] args) {
 			FileWriter fw = new FileWriter("");
 			BufferedWriter bw = new BufferedWriter(fw);
 			OutputStream os = new FileOutputStream("");
+			FileInputStream is = new FileInputStream("");
 					){
-			s=br.readLine();	
+			s=br.readLine();
+			
 			Object o1 = Optional.of(1);
 			DoubleFunction df = x -> x+10;
 //			Arrays.asList(1.0).stream().forEach(df);

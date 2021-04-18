@@ -1,6 +1,7 @@
 package Testchecks;
 
 import java.io.Console;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -18,7 +19,7 @@ import java.util.concurrent.Future;
 
 public class Enthu4 {
 	  public static enum EnumC{ C, CC, CCC }; 
-public static void main(String[] args) {
+public static void main(String[] args) throws FileNotFoundException {
 	List li = new ArrayList<>();
 	assert li==null:li=null;
 	String s;
@@ -31,7 +32,7 @@ public static void main(String[] args) {
 	    System.out.println(x+" " + y);
 	   double d =i;
 	 HashSet hs;
-	 hs.ad
+	 
 	    Map<String, Integer> map1 = new HashMap<>();
 	    map1.put("a", 1); map1.put("b", 1);
 	    map1.merge("b", 1, (i1, i2)->i1+i2); 
@@ -48,4 +49,4 @@ public static void main(String[] args) {
 }
 
 }
-public enum BB{}
+

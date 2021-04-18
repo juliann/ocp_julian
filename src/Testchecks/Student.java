@@ -115,7 +115,7 @@ class MidiPlayer implements MusicPlayer {
 	@Override
 	public void play(Object e) {
 		HashMap hm = new HashMap();
-		hm.pu
+		
 		
 	} }
 interface Measurement{ 

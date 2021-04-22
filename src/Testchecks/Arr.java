@@ -1,6 +1,10 @@
 package Testchecks;
 
+import java.util.Comparator;
 import java.util.ListResourceBundle;
+import java.util.concurrent.ConcurrentMap;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class Arr extends ListResourceBundle{
 @Override
@@ -21,5 +25,8 @@ public static void main(String[] args) {
 			System.out.println(st);
 		}
 	}
+	Predicate<String> p = (a) -> a.contains("b");
+	ConcurrentMap cm;
+
 }
 }

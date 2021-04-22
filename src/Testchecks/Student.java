@@ -14,6 +14,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.Optional;
+import java.util.ResourceBundle;
+import java.util.TreeSet;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.locks.ReadWriteLock;
@@ -95,7 +98,8 @@ public String call()  {
 	   Stream<String> news = s1.filter(s->s.contains("c"))   
 			   .flatMap(olds -> olds.stream());  
 	   news.forEach(System.out::print); 
-
+	   ArrayBlockingQueue aq;
+	   
 	
 	return null;
 }}
@@ -115,9 +119,32 @@ class MidiPlayer implements MusicPlayer {
 	@Override
 	public void play(Object e) {
 		HashMap hm = new HashMap();
-		
+	
 		
 	} }
 interface Measurement{ 
+	int INTAS = 1;
 	public default  int getUnit()
 	{ return 100; } }
+
+class TA extends Thread{
+	void dos() {
+		System.out.println(((Measurement)this).INTAS);
+		TreeSet<TA> ts = new TreeSet<>();
+	
+		ResourceBundle rb = ResourceBundle.getBundle("");
+		
+	}
+}
+class RunTest {   
+	static class Runner implements Runnable{  
+		public void run(){      
+			System.out.println("In Run"); 
+			}     }  
+	public static void main(String[] args) { 
+		Runner r = new Runner();    
+		Thread t1 = new Thread(r); 
+		Thread t2 = new Thread(r);   
+t1.start();   
+t2.start();   
+}      }

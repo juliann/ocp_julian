@@ -11,6 +11,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.TreeSet;
 import java.util.stream.IntStream;
 
+
 public class InhCh {
 	int in = 10;
 	void t()throws IOException{}
@@ -51,8 +52,11 @@ public class InhCh {
 	}
 }
 class I extends InhCh{
-	void t() {
+	void t()  {
+		Console c;
+	
 		
 	}
+	public static enum Grade{ A, B , C, D, F}   
 }
 

@@ -5,7 +5,13 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -16,11 +22,30 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.PriorityBlockingQueue;
+import java.util.function.IntFunction;
+import java.util.function.IntUnaryOperator;
 
-public class Enthu4 {
+public class Enthu4  {
 	  public static enum EnumC{ C, CC, CCC }; 
-public static void main(String[] args) throws FileNotFoundException {
+public static void main(String[] args) throws FileNotFoundException  {
+
+	
+	
+	Path p2 = Paths.get("\\yellowstone");
+	 System.out.println(p2.isAbsolute());
+	 
+    Duration du = Duration.ofMillis(1100);
+    System.out.println(du); 
+    du = Duration.ofSeconds(61);
+    System.out.println(du);
+  String a;
+  Duration dua = Duration.ofHours(1);
+  Period pe;
+ 
+	
 	List li = new ArrayList<>();
+	
 	assert li==null:li=null;
 	String s;
 	int i = Integer.MAX_VALUE;

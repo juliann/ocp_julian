@@ -2,6 +2,7 @@ package ch5;
 
 import java.time.DayOfWeek;
 import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
@@ -53,7 +54,8 @@ public class ZonedDateTimeTest {
 		
 		ZonedDateTime nt = zdt.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
 		System.out.println(nt);
-		
+		Instant i = Instant.now();
+	
 		ZoneId zid= ZoneId.of("GMT+1");
 		zid.getRules().getTransitions().stream().forEach(System.out::println);
 		System.out.println(zid.getRules().isDaylightSavings(zdt.toInstant()));

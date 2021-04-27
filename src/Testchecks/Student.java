@@ -2,9 +2,13 @@ package Testchecks;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InvalidClassException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -128,13 +132,24 @@ interface Measurement{
 	{ return 100; } }
 
 class TA extends Thread{
-	void dos() {
+	void dos() throws  IOException, SQLException {
 		System.out.println(((Measurement)this).INTAS);
 		TreeSet<TA> ts = new TreeSet<>();
 	
 		ResourceBundle rb = ResourceBundle.getBundle("");
+		try(InputStream is = new FileInputStream("")){
+			int i;
+			doss();
+//			System.out.println(i);
+			i=is.read();
+		}catch(Exception e) {
+			Stream.of(1);
+			ArrayDeque ad;
+			ArrayBlockingQueue abq;
 		
+		}
 	}
+	void doss() throws SQLException{}
 }
 class RunTest {   
 	static class Runner implements Runnable{  
@@ -147,4 +162,5 @@ class RunTest {
 		Thread t2 = new Thread(r);   
 t1.start();   
 t2.start();   
-}      }
+}   
+	}

@@ -13,6 +13,12 @@ import java.util.stream.IntStream;
 
 
 public class InhCh {
+	 int getStatusCode(Object obj) throws NullPointerException  
+	 {   
+		 if(obj != null ) return 1;      
+		 else return 0;   
+		 }
+	 
 	int in = 10;
 	void t()throws IOException{}
 	public static void main(String[] args) throws SQLException {
@@ -52,11 +58,20 @@ public class InhCh {
 	}
 }
 class I extends InhCh{
+	
+	private class TestI{
+		private int i=10;
+	}
 	void t()  {
 		Console c;
+		TestI t = new TestI();
+		System.out.println(t.i);
+		
 	
 		
 	}
+	
+	
 	public static enum Grade{ A, B , C, D, F}   
 }
 

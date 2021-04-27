@@ -36,7 +36,8 @@ public static void main(String[] args) {
 			FileInputStream is = new FileInputStream("");
 					){
 			s=br.readLine();
-			
+			br.lines();
+			System.out.println("io");
 			Object o1 = Optional.of(1);
 			DoubleFunction df = x -> x+10;
 //			Arrays.asList(1.0).stream().forEach(df);

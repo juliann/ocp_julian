@@ -1,7 +1,11 @@
 package Testchecks;
 
 import java.io.Console;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,6 +17,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -25,13 +30,33 @@ import java.util.concurrent.Future;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.function.IntFunction;
 import java.util.function.IntUnaryOperator;
+import java.util.function.Predicate;
+import java.util.function.DoubleFunction;
+import java.util.function.Function;
 
 public class Enthu4  {
 	  public static enum EnumC{ C, CC, CCC }; 
-public static void main(String[] args) throws FileNotFoundException  {
-
-	
-	
+	  
+	    public static int operate(IntUnaryOperator iuo)
+	    {     
+	    	return iuo.applyAsInt(5);    
+	    	}
+	  
+public static void main(String[] args)    {
+	DoubleFunction df = x->x+10; 
+	  Object apply = df.apply(1);
+	  System.out.println(apply);
+    IntFunction<IntUnaryOperator> fo = a->{return b->a-b;};  //1                
+    IntUnaryOperator iii = fo.apply(5);
+    int x = operate(fo.apply(20)); //2        
+    System.out.println(x);
+    Map<String,?> na = new HashMap<String,String>();
+    Object x1 = na.get("hi");
+    Function<String,Function<String,String>> fs = 
+    		(String aaas) -> {return 
+    		(a) -> aaas.toUpperCase() +" "+ a.toUpperCase();};
+    System.out.println(fs.apply("HALLO").apply("WAT"));
+    
 	Path p2 = Paths.get("\\yellowstone");
 	 System.out.println(p2.isAbsolute());
 	 
@@ -42,7 +67,7 @@ public static void main(String[] args) throws FileNotFoundException  {
   String a;
   Duration dua = Duration.ofHours(1);
   Period pe;
- 
+
 	
 	List li = new ArrayList<>();
 	
@@ -52,7 +77,7 @@ public static void main(String[] args) throws FileNotFoundException  {
 	Console c = System.console();
 //	c.readLine();
 	    Path p1 = Paths.get("c:\\a\\b\\c");
-	    String x = p1.getName(1).toString();    
+	    String xy = p1.getName(1).toString();    
 	    String y = p1.subpath(1,2).toString();
 	    System.out.println(x+" " + y);
 	   double d =i;
@@ -67,7 +92,7 @@ public static void main(String[] args) throws FileNotFoundException  {
 	    List<String> lia = new ArrayList<String>(10);
 	    ExecutorService es =  Executors.newSingleThreadExecutor();     
 	    Future<String> future = es.submit(() ->"hu");
-	  PrintWriter pw = new PrintWriter("");
+	 
 	  ConcurrentMap<String, Object> cache = new ConcurrentHashMap<>();
 	 
 //	LocalDateTime ltd = LocalDateTime.ofInstant(readyTime, ZoneId.of("GMT+2"));

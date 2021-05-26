@@ -12,5 +12,9 @@
 	<classpathentry kind="lib" path="E:/gdocks/Downloads/derby-10.14.2.0.jar"/>
 	<classpathentry kind="lib" path="E:/gdocks/Downloads/h2-1.4.200.jar"/>
 	<classpathentry kind="lib" path="E:/gdocks/Downloads/mysql-connector-java-8.0.23.jar"/>
+	<classpathentry kind="lib" path="E:/gdocks/Downloads/jsoup-1.13.1.jar"/>
+	<classpathentry kind="lib" path="E:/gdocks/Downloads/slf4j-api-1.7.30.jar"/>
+	<classpathentry kind="lib" path="E:/gdocks/Downloads/logback-classic-1.2.3.jar"/>
+	<classpathentry kind="lib" path="E:/gdocks/Downloads/logback-core-1.2.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

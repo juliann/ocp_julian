@@ -9,6 +9,7 @@ import java.io.InvalidClassException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +22,10 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.TreeSet;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -129,13 +133,17 @@ class MidiPlayer implements MusicPlayer {
 interface Measurement{ 
 	int INTAS = 1;
 	public default  int getUnit()
-	{ return 100; } }
+	{List y;
+	Map<String, ArrayList<String>> stateCitiesMap = new HashMap<>();
+	Map<String, List<String>> stateCitiesMap1 = new HashMap<>();
+	Map<String, List<String>> stateCitiesMap2 = new HashMap<String, List<String>>();
+		return 100; } }
 
 class TA extends Thread{
 	void dos() throws  IOException, SQLException {
 		System.out.println(((Measurement)this).INTAS);
 		TreeSet<TA> ts = new TreeSet<>();
-	
+		List<?> list2 = new ArrayList<>(Arrays.asList("1"));
 		ResourceBundle rb = ResourceBundle.getBundle("");
 		try(InputStream is = new FileInputStream("")){
 			int i;
@@ -143,10 +151,14 @@ class TA extends Thread{
 //			System.out.println(i);
 			i=is.read();
 		}catch(Exception e) {
-			Stream.of(1);
+			ForkJoinPool fjp = new ForkJoinPool();
+			 ForkJoinTask<Integer> submit = fjp.submit(()->5);
+			LocalDate ld = LocalDate.now();
+			
+		
 			ArrayDeque ad;
 			ArrayBlockingQueue abq;
-		
+			
 		}
 	}
 	void doss() throws SQLException{}
